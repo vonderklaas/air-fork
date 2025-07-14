@@ -30,12 +30,14 @@ Note: This tool has nothing to do with hot-deploy for production.
 
 Support air config fields as arguments:
 
-You can view the available command-line arguments by running the following commands:  
+You can view the available command-line arguments by running the following commands:
 
 ```
 air -h
 ```
-or  
+
+or
+
 ```
 air --help
 ```
@@ -140,7 +142,13 @@ this will replace `$PWD` with the current directory, `$AIR_PORT` is the port whe
 
 ## Usage
 
-For less typing, you could add `alias air='~/.air'` to your `.bashrc` or `.zshrc`.
+If upon running `air` you face `command not found: air`, make sure you update your `.bashrc` or `.zshrc` with:
+
+```
+export PATH=$PATH:$(go env GOPATH)/bin
+```
+
+For less typing, you could add `alias air='$(go env GOPATH)/bin/air'` to your `.bashrc` or `.zshrc`.
 
 First enter into your project
 
